@@ -108,6 +108,27 @@
   .node-diagram .node-center{fill:var(--teal);}
   .node-diagram text{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--ink-soft);}
   .node-diagram .center-label{fill:#fff;font-family:'Zilla Slab',serif;font-size:13px;}
+  .node-diagram .sinm-outer{fill:none;stroke:var(--line);stroke-width:1.5;}
+  .node-diagram .sinm-outer-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;fill:var(--ink-soft);}
+  .node-diagram .sinm-ring{fill:var(--teal-tint);stroke:var(--gold);stroke-width:1.5;stroke-dasharray:4 4;}
+  .node-diagram .sinm-ring-label{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--gold);}
+  .node-diagram .sinm-side{stroke-width:1.5;}
+  .node-diagram .sinm-side-gold{fill:var(--gold-tint);stroke:var(--gold);}
+  .node-diagram .sinm-side-outline{fill:var(--bg);stroke:var(--teal);}
+  .node-diagram .sinm-side-label{font-family:'Zilla Slab',serif;font-size:12px;fill:var(--teal-deep);}
+  .node-diagram .sinm-side-label-alt{font-family:'Zilla Slab',serif;font-size:12px;fill:var(--teal-deep);}
+  .node-diagram .sinm-dash{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:3 3;}
+
+  /* ---------- SINM SECTION ---------- */
+  .sinm-image-frame{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+  .sinm-image-frame img{width:100%;height:auto;border-radius:8px;display:block;}
+  .sinm-caption{margin-top:12px;font-size:13px;color:var(--ink-soft);text-align:center;}
+  .sinm-components{display:flex;flex-direction:column;gap:20px;}
+  .sinm-component{padding-bottom:16px;border-bottom:1px solid var(--line);}
+  .sinm-component:last-child{border-bottom:none;padding-bottom:0;}
+  .sinm-component .label{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);display:block;margin-bottom:6px;}
+  .sinm-component h4{font-family:'Zilla Slab',serif;font-size:17px;margin:0 0 6px 0;color:var(--teal-deep);}
+  .sinm-component p{margin:0;font-size:14.5px;color:var(--ink-soft);}
 
   /* ---------- SECTION shared ---------- */
   section{padding:84px 0;}
@@ -260,6 +281,7 @@
     <label for="menu-toggle" class="menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></label>
     <nav class="links">
       <a href="#why-me">Why Me</a>
+      <a href="#sinm">Framework</a>
       <a href="#approach">Approach</a>
       <a href="#programmes">Programmes</a>
       <a href="#flagship">Flagship</a>
@@ -281,25 +303,28 @@
       </div>
     </div>
     <div class="hero-visual">
-      <svg class="node-diagram" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
-        <line class="line-active" x1="180" y1="160" x2="70" y2="60"></line>
-        <line class="line-active" x1="180" y1="160" x2="290" y2="60"></line>
-        <line class="line-active" x1="180" y1="160" x2="60" y2="230"></line>
-        <line class="line-active" x1="180" y1="160" x2="300" y2="230"></line>
-        <line class="line-active" x1="180" y1="160" x2="180" y2="290"></line>
-        <circle class="node node-center" cx="180" cy="160" r="42"></circle>
-        <text class="center-label" x="180" y="155" text-anchor="middle">Systemic</text>
-        <text class="center-label" x="180" y="172" text-anchor="middle">Identity</text>
-        <circle class="node" cx="70" cy="60" r="30"></circle>
-        <text x="70" y="105" text-anchor="middle">Leadership</text>
-        <circle class="node" cx="290" cy="60" r="30"></circle>
-        <text x="290" y="105" text-anchor="middle">Critical Thinking</text>
-        <circle class="node" cx="60" cy="230" r="30"></circle>
-        <text x="60" y="274" text-anchor="middle">Emotional Capital</text>
-        <circle class="node" cx="300" cy="230" r="30"></circle>
-        <text x="300" y="274" text-anchor="middle">AI Readiness</text>
-        <circle class="node" cx="180" cy="290" r="26"></circle>
-        <text x="180" y="316" text-anchor="middle">Communication</text>
+      <svg class="node-diagram" viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Social Space (outer) -->
+        <circle class="sinm-outer" cx="180" cy="175" r="150"></circle>
+        <text class="sinm-outer-label" x="180" y="30" text-anchor="middle">SOCIAL SPACE</text>
+        <!-- Systems Capital (ring) -->
+        <circle class="sinm-ring" cx="180" cy="175" r="98"></circle>
+        <text class="sinm-ring-label" x="180" y="70" text-anchor="middle">Systems Capital</text>
+        <!-- Capital Portfolio (left) -->
+        <circle class="sinm-side sinm-side-gold" cx="66" cy="175" r="44"></circle>
+        <text class="sinm-side-label" x="66" y="171" text-anchor="middle">Capital</text>
+        <text class="sinm-side-label" x="66" y="186" text-anchor="middle">Portfolio</text>
+        <!-- Workplace Ideologies (right) -->
+        <circle class="sinm-side sinm-side-outline" cx="294" cy="175" r="44"></circle>
+        <text class="sinm-side-label-alt" x="294" y="171" text-anchor="middle">Workplace</text>
+        <text class="sinm-side-label-alt" x="294" y="186" text-anchor="middle">Ideologies</text>
+        <!-- Identity Negotiation (center) -->
+        <circle class="node node-center" cx="180" cy="175" r="56"></circle>
+        <text class="center-label" x="180" y="171" text-anchor="middle">Identity</text>
+        <text class="center-label" x="180" y="189" text-anchor="middle">Negotiation</text>
+        <!-- Graduate / Reads Norms -->
+        <line class="sinm-dash" x1="180" y1="231" x2="180" y2="300"></line>
+        <text class="sinm-ring-label" x="180" y="322" text-anchor="middle">Graduate reads norms →</text>
       </svg>
     </div>
   </div>
@@ -323,7 +348,44 @@
         <li><span class="num">06</span> Designer of 43 evidence-based professional development workshops</li>
         <li><span class="num">07</span> Experienced facilitator across higher education and professional contexts</li>
       </ul>
-      <div class="callout">My SINM model and research on Emotional Capital provide a distinctive evidence-based foundation for capability development.</div>
+      <div class="callout">My SINM model and research on Emotional Capital provide a distinctive evidence-based foundation for capability development. <a href="#sinm" style="color:var(--teal-deep);font-weight:600;text-decoration:underline;">See the framework ↓</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="sinm">
+  <div class="wrap why-grid">
+    <div class="sinm-image-frame">
+      <img src="images/SINM_model.png" alt="Diagram of the Systemic Identity Negotiation Model: a Social Space containing Systems Capital, with Capital Portfolio and Workplace Ideologies flanking a central Identity Negotiation process, and a graduate reading workplace norms">
+      <p class="sinm-caption">The Systemic Identity Negotiation Model (SINM)</p>
+    </div>
+    <div>
+      <p class="eyebrow">The Theoretical Foundation</p>
+      <h2 style="font-size:28px;margin-bottom:18px;">Every programme is grounded in the SINM</h2>
+      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:28px;max-width:52ch;">Professional identity isn't fixed — it's negotiated. The Systemic Identity Negotiation Model explains how professionals position and invest in an identity claim, and have that claim recognized, or "warranted," by the systems around them.</p>
+      <div class="sinm-components">
+        <div class="sinm-component">
+          <span class="label">Capital Portfolio</span>
+          <h4>Resources</h4>
+          <p>The skills, credentials, experience, and networks a professional brings into a workplace system.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Workplace Ideologies</span>
+          <h4>Rules of the Game</h4>
+          <p>The unwritten norms, values, and expectations that govern how a given workplace actually operates.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Systems Capital</span>
+          <h4>Aligns Capital, Shapes Trajectory</h4>
+          <p>The capacity to read these rules and align personal resources with them — shaping career trajectory.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Identity Negotiation</span>
+          <h4>Claim → Warranting</h4>
+          <p>The ongoing process of claiming a professional identity, and having that claim recognized by others.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">This model is the evidence-based foundation behind every workshop on this page — from Strategic Communication to AI Readiness.</div>
     </div>
   </div>
 </section>
