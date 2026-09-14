@@ -252,7 +252,31 @@
   .contact-card h3{font-size:18px;margin-bottom:8px;}
   .contact-card p{color:var(--ink-soft);font-size:14.5px;margin:0 0 18px 0;}
 
-  footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--ink-soft);font-size:13.5px;}
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;}
+  .gallery-item{
+    flex:1 1 260px;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;
+    background:var(--panel);border:1.5px dashed var(--line);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .gallery-item .placeholder-label{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+  .gallery-item .placeholder-label strong{display:block;color:var(--teal-deep);font-family:'Zilla Slab',serif;font-size:15px;margin-bottom:6px;}
+  .gallery-item .placeholder-label code{font-size:11.5px;background:var(--bg-alt);padding:2px 6px;border-radius:4px;}
+
+  /* ---------- RESEARCH / PUBLICATIONS ---------- */
+  .pub-blocks-grid{display:flex;flex-wrap:wrap;gap:0 56px;margin-top:16px;}
+  .pub-block{flex:1 1 440px;margin-bottom:40px;}
+  .pub-block h3{
+    font-family:'Zilla Slab',serif;font-size:18px;color:var(--teal-deep);
+    margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .pub-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;}
+  .pub-list li{
+    font-size:14px;color:var(--ink-soft);padding:8px 0;border-bottom:1px dotted var(--line);
+    line-height:1.45;
+  }
+  .pub-list li:last-child{border-bottom:none;}
 
   @media (max-width:860px){
     nav.links{
@@ -287,6 +311,8 @@
       <a href="#programmes">Programmes</a>
       <a href="#flagship">Flagship</a>
       <a href="#healthcare">Healthcare</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#research">Research</a>
       <a href="#contact" class="nav-cta">Book a Call</a>
     </nav>
   </div>
@@ -965,6 +991,177 @@
 
     <div class="callout" style="margin-top:48px;">
       Ready to bring this to your hospital, cluster or care team? <a href="#contact" style="color:var(--teal-deep);font-weight:600;text-decoration:underline;">Book a discovery call ↓</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Workshops in Action</p>
+      <h2>Gallery</h2>
+      <p style="color:var(--ink-soft);font-size:15px;max-width:56ch;margin-top:14px;">A look at recent workshops, keynotes and training sessions.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Workshop session</strong>Replace with<br><code>images/gallery-1.jpg</code></div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Keynote address</strong>Replace with<br><code>images/gallery-2.jpg</code></div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Team training</strong>Replace with<br><code>images/gallery-3.jpg</code></div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Client workshop</strong>Replace with<br><code>images/gallery-4.jpg</code></div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Conference talk</strong>Replace with<br><code>images/gallery-5.jpg</code></div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label"><strong>Facilitation in action</strong>Replace with<br><code>images/gallery-6.jpg</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Publications</p>
+      <h2>Research by Dr Behnam Soltani</h2>
+      <p style="color:var(--ink-soft);font-size:15px;max-width:60ch;margin-top:14px;">Journal articles, books, book chapters and conference proceedings on graduate employability, professional identity, language socialization and workplace ideologies — the research base behind the SINM and every programme on this page.</p>
+      <div class="hero-actions" style="margin-top:22px;">
+        <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-primary">View Full Profile on Google Scholar</a>
+      </div>
+    </div>
+
+    <div class="pub-blocks-grid">
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Journal Articles</h3>
+        <ul class="pub-list">
+          <li>Academic Socialization as the Production and Negotiation of Social Space</li>
+          <li>Examining Space, Silence, and Agency in Language Socialization of an International Student in the EAP and Mainstream Courses</li>
+          <li>Employability Capitals as Essential Resources for Employment Obtainment and Career Sustainability of International Graduates</li>
+          <li>International Students' Employability: A Language Socialization Perspective</li>
+          <li>A Landscape of Practice Approach to Enhance Employability: Insights from Domestic and International Postgraduates</li>
+          <li>Being and Becoming an International Student: The Inter-relation Between Language Socialization and Identities</li>
+          <li>Workplace Ideologies, Employability and the Ideal Graduate Identities</li>
+          <li>From Imagined Community to Imagined Social Space: The Case of Three International Students</li>
+          <li>International Students' Language Socialization in an English-Medium University: A Socio-Spatial Lens</li>
+          <li>Implementing Feedback Literacy Practices Through Self-Assessment and Peer Feedback: A Language Socialization Perspective</li>
+          <li>Does the Association Between Self-Focus and Life Satisfaction Depend on the Levels of Perceived Societal Injustice?</li>
+          <li>Enhancing Critical Thinking Through Systems Thinking Integration: A Mixed-Methods Study of Student Learning Outcomes</li>
+          <li>Navigating the Hidden Curriculum: A Systemic Identity Negotiation Model of Graduate Employability</li>
+          <li>Cultural Fit and Workplace Ideologies: Understanding Employer Perceptions of Graduate Employability</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Books</h3>
+        <ul class="pub-list">
+          <li>Enhancing Student Education Transitions and Employability: From Theory to Practice</li>
+          <li>An Educator's Guide to Constructing Employable Identities</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Thesis</h3>
+        <ul class="pub-list">
+          <li>International Students' Language Socialization in New Zealand Tertiary Institutions: A Spatial Analysis</li>
+        </ul>
+      </div>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Book Chapters</h3>
+        <ul class="pub-list">
+          <li>International Students' Socialization and Transition Experiences in High School</li>
+          <li>Transitioning to Vocational Education</li>
+          <li>Enhancing Student Transition Experiences: The Role of Students in Proactively Building Essential Resources</li>
+          <li>Enhancing Student Transition Experiences: The Role of Institutions in Creating Opportunities for Students to Build Essential Resources</li>
+          <li>Enhancing Student Transition Experiences: Initiatives Guiding the Development of Essential Resources</li>
+          <li>Theorizing Graduate Employability and Identities</li>
+          <li>Contextualizing Graduate Identities</li>
+          <li>From Theory to Practice: Understanding Graduate Identities Through a Three-Level Framework</li>
+          <li>The Australian Context: A Market-Driven Landscape for Graduate Identity Construction</li>
+          <li>Negotiating Graduate Identities in the Aotearoa New Zealand Context</li>
+          <li>A Comparative Analysis of Graduate Identity Construction in Australia, New Zealand, and Singapore</li>
+          <li>Navigating Identities</li>
+          <li>Claiming/Disclaiming Identities</li>
+          <li>Affirming/Disaffirming Identities</li>
+          <li>Imposing Identities</li>
+          <li>Envisioning Identities</li>
+          <li>Systems Capital</li>
+          <li>Workplace Ideologies</li>
+          <li>Strategic Imperatives for Tertiary Institutions: Navigating the Employability Dispositif and Fostering Collective Graduate Identities</li>
+          <li>The Evolving Partnership with Employers: From Gatekeepers to Validators</li>
+          <li>The Facilitator as a Systems Architect for Graduate Identity</li>
+          <li>Empowering Learners as Agents of Their Identities in a Complex Systemic Landscape</li>
+        </ul>
+      </div>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Conference Papers and Proceedings</h3>
+        <ul class="pub-list">
+          <li>What Makes Graduates Employable? Perspectives of New Zealand Employers</li>
+          <li>Development of a Contemporary Model of Vocational Practice: Its Potential for Students in Vocational Education and Training</li>
+          <li>Assessment for Learning Through Self-Assessment and Peer Feedback</li>
+          <li>International Students' Capability Construction in a New Zealand Tertiary Institute</li>
+          <li>Assessment for Learning in Tertiary Education</li>
+          <li>Supervisor-Supervisee Interactions in a New Zealand Tertiary Institute</li>
+          <li>International Students' Narratives of Self-Assessment</li>
+          <li>School Policies and Social Connections in a Superdiverse New Zealand High School</li>
+          <li>International Students' Narratives of Socialization in a Superdiverse New Zealand High School</li>
+          <li>L2 Learning and Social Space: A Socio-Interpretive Turn in L2 Learning</li>
+          <li>Where Does Space Fit in Our Methodology?</li>
+          <li>L2 Identity and Social Space</li>
+          <li>International Students' Socialization in Tertiary Institutes in New Zealand</li>
+          <li>L2 Identity and Language Learning</li>
+          <li>Socialization of International Students at a New Zealand University</li>
+          <li>"I Am a Fool in the Classroom!"</li>
+          <li>Voices Behind Silence</li>
+          <li>L2 Identity and Socio-Academic Space</li>
+          <li>L2 Identity and Space: The Case of a Chinese International Student at a New Zealand University</li>
+          <li>"If I Don't Show My Emotions to My Face, People Don't Realize So": Telling Lives in the Classroom</li>
+          <li>"Shy for Them Is Not a Word in Their Mind": Spatiality and L2 Identity Construction</li>
+          <li>Spatiality and Language Socialization: A Case Study of an International Student's Socialization in His L2 Socio-Academic Space in a Tertiary Institute in New Zealand</li>
+          <li>The Narrative Construction of Identities in Critical Education</li>
+          <li>"If You Are Older Than the Others, You Must Speak for Them": A Case Study of a Pacific Islander Student's Interaction at a New Zealand University</li>
+          <li>Language, Culture, Power, and Imagined Community: A Case Study of an International Student's Participation at University</li>
+          <li>Participation, Imagined Communities, and Language Learning</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Other Scholarly Publications</h3>
+        <ul class="pub-list">
+          <li>Developing Capabilities in a New Zealand Tertiary Institution: From Foreign Learners to Socialized International Students</li>
+          <li>The Pedagogies of Becoming: The Case of Supervisor-Supervisee Interactions in a Master of Professional Practice Programme in New Zealand</li>
+          <li>An MPP Journey of Inspiration, Perspiration and Application</li>
+          <li>My MPP Journey of Inspiration, Perspiration and Application</li>
+          <li>Digital Spaces of Engagement: Perspectives on Using Zoom and Virtual Spaces in Online Classrooms</li>
+          <li>Pathways to Participation: Insights on Disability Inclusion at Asian Conferences</li>
+          <li>Capability Reconceptualized: Towards a Landscape of Practice Approach in Graduate Employability</li>
+          <li>The Treaty Times Thirty</li>
+          <li>Competencies Contextualized: Towards a Spatiotemporal Lens</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Book Reviews</h3>
+        <ul class="pub-list">
+          <li>Review of Exploring Professional Communication: Language in Action</li>
+          <li>Review of L2 Learning as Social Practice: Conversation-Analytic Perspectives</li>
+          <li>Book Review: Exploring Professional Communication: Language in Action</li>
+          <li>Book Review: Analyzing Narrative: Discourse and Sociolinguistic Perspectives</li>
+          <li>Book Review: An Introduction to Sociolinguistics: Society and Identity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero-actions" style="margin-top:8px;">
+      <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-ghost">‪Dr Behnam Soltani‬ on Google Scholar ↗</a>
     </div>
   </div>
 </section>
