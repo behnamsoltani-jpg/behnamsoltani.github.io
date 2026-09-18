@@ -1,3 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Behnam Soltani — Professional Development &amp; Workshops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F3EC;
+    --bg-alt:#EFEAdc;
+    --panel:#FFFFFF;
+    --ink:#202A2E;
+    --ink-soft:#5B6560;
+    --teal:#1F4B4C;
+    --teal-deep:#13302F;
+    --teal-tint:#E4EDEA;
+    --gold:#B2842A;
+    --gold-tint:#F4E9D2;
+    --line:#DDD4BF;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Zilla Slab',serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0;
+    color:var(--teal-deep);
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,236,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    font-family:'Zilla Slab',serif;font-weight:600;font-size:19px;color:var(--teal-deep);
+    text-decoration:none;
+  }
+  .brand span{color:var(--gold);}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-size:14.5px;font-weight:500;text-decoration:none;color:var(--ink);
+    border-bottom:2px solid transparent;padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  nav.links a:hover{border-color:var(--gold);color:var(--teal-deep);}
+  .nav-cta{
+    background:var(--teal);color:#fff !important;padding:9px 18px;border-radius:30px;
+    font-size:14px;font-weight:600;
+  }
+  .nav-cta:hover{background:var(--teal-deep);border-color:transparent !important;}
+  #menu-toggle{display:none;}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 88px;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:56px;align-items:center;}
+  .hero h1{font-size:44px;letter-spacing:-0.01em;margin-top:14px;}
+  .hero .sub{margin-top:22px;font-size:17px;color:var(--ink-soft);}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:30px;font-weight:600;font-size:14.5px;
+    text-decoration:none;border:1.5px solid transparent;transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--teal);color:#fff;}
+  .btn-primary:hover{background:var(--teal-deep);}
+  .btn-ghost{border-color:var(--teal);color:var(--teal-deep);}
+  .btn-ghost:hover{background:var(--teal-tint);}
+
+  /* signature node diagram */
+  .node-diagram{width:100%;height:auto;}
+  .node-diagram .line{stroke:var(--line);stroke-width:1.5;}
+  .node-diagram .line-active{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:4 4;}
+  .node-diagram .node{fill:var(--panel);stroke:var(--teal);stroke-width:1.5;}
+  .node-diagram .node-center{fill:var(--teal);}
+  .node-diagram text{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--ink-soft);}
+  .node-diagram .center-label{fill:#fff;font-family:'Zilla Slab',serif;font-size:13px;}
+  .node-diagram .sinm-outer{fill:none;stroke:var(--line);stroke-width:1.5;}
+  .node-diagram .sinm-outer-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;fill:var(--ink-soft);}
+  .node-diagram .sinm-ring{fill:var(--teal-tint);stroke:var(--gold);stroke-width:1.5;stroke-dasharray:4 4;}
+  .node-diagram .sinm-ring-label{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--gold);}
+  .node-diagram .sinm-side{stroke-width:1.5;}
+  .node-diagram .sinm-side-gold{fill:var(--gold-tint);stroke:var(--gold);}
+  .node-diagram .sinm-side-outline{fill:var(--bg);stroke:var(--teal);}
+  .node-diagram .sinm-side-label{font-family:'Zilla Slab',serif;font-size:12px;fill:var(--teal-deep);}
+  .node-diagram .sinm-side-label-alt{font-family:'Zilla Slab',serif;font-size:12px;fill:var(--teal-deep);}
+  .node-diagram .sinm-dash{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:3 3;}
+
+  /* ---------- SINM SECTION ---------- */
+  .sinm-image-frame{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+  .sinm-image-frame img{width:100%;height:auto;border-radius:8px;display:block;}
+  .sinm-caption{margin-top:12px;font-size:13px;color:var(--ink-soft);text-align:center;}
+  .sinm-components{display:flex;flex-direction:column;gap:20px;}
+  .sinm-component{padding-bottom:16px;border-bottom:1px solid var(--line);}
+  .sinm-component:last-child{border-bottom:none;padding-bottom:0;}
+  .sinm-component .label{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);display:block;margin-bottom:6px;}
+  .sinm-component h4{font-family:'Zilla Slab',serif;font-size:17px;margin:0 0 6px 0;color:var(--teal-deep);}
+  .sinm-component p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  /* ---------- SECTION shared ---------- */
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:32px;margin-top:10px;}
+  .alt-bg{background:var(--bg-alt);}
+
+  /* ---------- WHY ME ---------- */
+  .why-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
+  .avatar-card{
+    background:var(--teal);border-radius:var(--radius);padding:38px;color:#fff;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .avatar-badge{
+    width:76px;height:76px;border-radius:50%;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Zilla Slab',serif;font-size:26px;font-weight:600;color:var(--teal-deep);
+  }
+  .avatar-card h3{color:#fff;font-size:22px;}
+  .avatar-card p{color:#DCE7E4;font-size:14.5px;margin:0;}
+  .avatar-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;}
+  .credential-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .credential-list li{
+    display:flex;gap:12px;align-items:flex-start;font-size:15.5px;
+    padding-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  .credential-list li:last-child{border-bottom:none;}
+  .credential-list .num{
+    font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:13px;font-weight:500;
+    min-width:24px;
+  }
+  .callout{
+    margin-top:24px;padding:20px 22px;border-left:3px solid var(--gold);background:var(--gold-tint);
+    border-radius:0 10px 10px 0;font-size:15px;color:var(--teal-deep);
+  }
+
+  /* ---------- CHALLENGE -> EXPERTISE ---------- */
+  .pair-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .pair-row{
+    display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:center;
+    padding:20px 0;border-bottom:1px solid var(--line);
+  }
+  .pair-row .challenge{font-weight:600;font-size:15.5px;color:var(--ink);}
+  .pair-row .expertise{font-size:15px;color:var(--ink-soft);}
+  .connector{display:flex;align-items:center;justify-content:center;}
+  .connector svg{width:32px;height:16px;}
+  .connector line{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:3 3;}
+  .connector circle{fill:var(--gold);}
+
+  /* ---------- PROGRAMMES ---------- */
+  .programme-toolbar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
+  details.programme{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:12px;overflow:hidden;
+  }
+  details.programme summary{
+    list-style:none;cursor:pointer;padding:20px 24px;display:flex;align-items:center;gap:18px;
+  }
+  details.programme summary::-webkit-details-marker{display:none;}
+  .prog-num{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;
+    min-width:26px;
+  }
+  .prog-title{font-family:'Zilla Slab',serif;font-weight:600;font-size:17px;flex:1;color:var(--teal-deep);}
+  .prog-flag{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+    background:var(--gold-tint);color:var(--gold);padding:4px 9px;border-radius:20px;margin-right:6px;
+  }
+  .prog-flag.live{background:var(--teal-tint);color:var(--teal-deep);}
+  .prog-duration{font-size:13.5px;color:var(--ink-soft);white-space:nowrap;}
+  .chevron{
+    width:20px;height:20px;flex-shrink:0;transition:transform .2s ease;color:var(--ink-soft);
+  }
+  details[open] .chevron{transform:rotate(180deg);}
+  .prog-body{padding:0 24px 26px 24px;display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--line);padding-top:20px;}
+  .prog-body h4{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--ink-soft);margin:0 0 10px 0;font-weight:500;
+  }
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--teal-tint);color:var(--teal-deep);font-size:13px;padding:5px 12px;border-radius:20px;}
+  .topic-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .topic-list li{font-size:14.5px;padding-left:16px;position:relative;}
+  .topic-list li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1.5px;background:var(--gold);}
+
+  /* ---------- FLAGSHIP ---------- */
+  .flagship-card{
+    background:var(--teal-deep);border-radius:20px;padding:52px;color:#fff;
+  }
+  .flagship-card .eyebrow{color:var(--gold);}
+  .flagship-card h2{color:#fff;font-size:30px;margin-top:8px;}
+  .flagship-card .tm{font-size:16px;vertical-align:super;}
+  .flagship-card > p{color:#C9D8D5;max-width:56ch;margin-top:14px;}
+  .day-track{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px;}
+  .day{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:20px 16px;}
+  .day .day-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:13px;}
+  .day .day-title{font-family:'Zilla Slab',serif;font-size:15.5px;margin-top:8px;color:#fff;line-height:1.3;}
+
+  /* ---------- MESSAGE CONTRAST ---------- */
+  .contrast-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .contrast-card{padding:34px;border-radius:var(--radius);}
+  .contrast-card.dim{background:var(--bg-alt);border:1px solid var(--line);}
+  .contrast-card.bright{background:var(--teal);color:#fff;}
+  .contrast-card h3{font-size:19px;margin-bottom:18px;}
+  .contrast-card.bright h3{color:#fff;}
+  .contrast-card.dim h3{color:var(--ink-soft);font-weight:500;font-family:'Inter',sans-serif;font-size:16px;}
+  .contrast-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .contrast-card.dim li{color:var(--ink-soft);font-size:15px;}
+  .contrast-card.dim li::before{content:"— ";}
+  .contrast-card.bright li{font-size:15.5px;font-weight:500;padding-left:22px;position:relative;}
+  .contrast-card.bright li::before{
+    content:"✓";position:absolute;left:0;top:0;color:var(--gold);font-weight:700;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+  .contact-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;
+  }
+  .contact-card h3{font-size:18px;margin-bottom:8px;}
+  .contact-card p{color:var(--ink-soft);font-size:14.5px;margin:0 0 18px 0;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:flex;flex-wrap:wrap;gap:20px;margin-top:36px;}
+  .gallery-item{
+    flex:1 1 300px;max-width:400px;border-radius:var(--radius);overflow:hidden;
+    background:var(--panel);border:1px solid var(--line);margin:0;
+  }
+  .gallery-item .photo-frame{aspect-ratio:4/3;overflow:hidden;background:var(--bg-alt);}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .gallery-item figcaption{padding:14px 18px 18px;font-size:13.5px;color:var(--ink-soft);line-height:1.45;}
+  .gallery-item figcaption strong{display:block;color:var(--teal-deep);font-family:'Zilla Slab',serif;font-size:15.5px;margin-bottom:3px;}
+  .gallery-item.placeholder{border:1.5px dashed var(--line);}
+  .gallery-item .placeholder-label{font-size:13px;color:var(--ink-soft);line-height:1.5;text-align:center;padding:30px 20px;}
+  .gallery-item .placeholder-label strong{display:block;color:var(--teal-deep);font-family:'Zilla Slab',serif;font-size:15px;margin-bottom:6px;}
+  .gallery-item .placeholder-label code{font-size:11.5px;background:var(--bg-alt);padding:2px 6px;border-radius:4px;}
+
+  /* ---------- RESEARCH / PUBLICATIONS ---------- */
+  .pub-blocks-grid{display:flex;flex-wrap:wrap;gap:0 56px;margin-top:16px;}
+  .pub-block{flex:1 1 440px;margin-bottom:40px;}
+  .pub-block h3{
+    font-family:'Zilla Slab',serif;font-size:18px;color:var(--teal-deep);
+    margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .pub-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;}
+  .pub-list li{
+    font-size:14px;color:var(--ink-soft);padding:8px 0;border-bottom:1px dotted var(--line);
+    line-height:1.45;
+  }
+  .pub-list li:last-child{border-bottom:none;}
+
+  @media (max-width:860px){
+    nav.links{
+      position:fixed;top:64px;left:0;right:0;background:var(--bg);
+      flex-direction:column;align-items:flex-start;padding:20px 28px;gap:18px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    #menu-toggle:checked ~ .links{display:flex;}
+    .menu-btn{display:block;}
+    .hero-grid,.why-grid,.contrast-grid{grid-template-columns:1fr;}
+    .day-track{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    .prog-body{grid-template-columns:1fr;}
+    .pair-row{grid-template-columns:1fr;gap:6px;text-align:left;}
+    .connector{display:none;}
+    .hero h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">Dr Behnam Soltani<span>.</span></a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#why-me">Why Me</a>
+      <a href="#sinm">Framework</a>
+      <a href="#approach">Approach</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#flagship">Flagship</a>
+      <a href="#healthcare">Healthcare</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#research">Research</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Professional Development · Workshops · Corporate Training</p>
+      <h1>Develop employees who can think critically, build emotional capital, work responsibly with AI, and lead in complexity.</h1>
+      <p class="sub">Research-informed professional development programmes that help organizations strengthen leadership, critical thinking, emotional capital, AI capability, communication, professional identity, and workplace effectiveness.</p>
+      <p class="sub" style="margin-top:12px;">Drawing on internationally published research, I design and facilitate practical workshops that help employees navigate change, think critically, build emotional capital, leverage AI responsibly, communicate effectively, develop professional influence, and thrive in today's complex workplace.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="#programmes" class="btn btn-ghost">View Programmes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="why-me">
+  <div class="wrap why-grid">
+    <div class="avatar-card">
+      <img src="images/Ben.png" alt="Portrait of Dr Behnam Soltani" class="avatar-photo">
+      <h3>Why Work With<br>Dr Behnam Soltani?</h3>
+    </div>
+    <div>
+      <p class="eyebrow">A few things about me</p>
+      <ul class="credential-list">
+        <li><span class="num">01</span> Assistant Professor at Singapore Institute of Technology</li>
+        <li><span class="num">02</span> Internationally published researcher</li>
+        <li><span class="num">03</span> Developer of the Systemic Identity Negotiation Model (SINM)</li>
+        <li><span class="num">04</span> Researcher in Emotional Capital, Professional Identity, Employability, and Workplace Communication</li>
+        <li><span class="num">05</span> Specialist in Critical Thinking, Systems Thinking, and Workplace Capability Development</li>
+        <li><span class="num">06</span> Designer of 43 evidence-based professional development workshops</li>
+        <li><span class="num">07</span> Experienced facilitator across higher education and professional contexts</li>
+      </ul>
+      <div class="callout">My SINM model and research on Emotional Capital provide a distinctive evidence-based foundation for capability development. <a href="#sinm" style="color:var(--teal-deep);font-weight:600;text-decoration:underline;">See the framework ↓</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="sinm">
+  <div class="wrap why-grid">
+    <div class="sinm-image-frame">
+      <img src="images/SINM_model.png" alt="Diagram of the Systemic Identity Negotiation Model: a Social Space containing Systems Capital, with Capital Portfolio and Workplace Ideologies flanking a central Identity Negotiation process, and a graduate reading workplace norms">
+      <p class="sinm-caption">The Systemic Identity Negotiation Model (SINM)</p>
+    </div>
+    <div>
+      <p class="eyebrow">The Theoretical Foundation</p>
+      <h2 style="font-size:28px;margin-bottom:18px;">Every programme is grounded in the SINM</h2>
+      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:28px;max-width:52ch;">Professional identity isn't fixed — it's negotiated. The Systemic Identity Negotiation Model explains how professionals position and invest in an identity claim, and have that claim recognized, or "warranted," by the systems around them.</p>
+      <div class="sinm-components">
+        <div class="sinm-component">
+          <span class="label">Capital Portfolio</span>
+          <h4>Resources</h4>
+          <p>The skills, credentials, experience, and networks a professional brings into a workplace system.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Workplace Ideologies</span>
+          <h4>Rules of the Game</h4>
+          <p>The unwritten norms, values, and expectations that govern how a given workplace actually operates.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Systems Capital</span>
+          <h4>Aligns Capital, Shapes Trajectory</h4>
+          <p>The capacity to read these rules and align personal resources with them — shaping career trajectory.</p>
+        </div>
+        <div class="sinm-component">
+          <span class="label">Identity Negotiation</span>
+          <h4>Claim → Warranting</h4>
+          <p>The ongoing process of claiming a professional identity, and having that claim recognized by others.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">This model is the evidence-based foundation behind every workshop on this page — from Strategic Communication to AI Readiness.</div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A Note for Companies</p>
+      <h2>From business challenge to expertise</h2>
+    </div>
+    <div class="pair-list">
+      <!-- row -->
+      <div class="pair-row">
+        <div class="challenge">Leadership development</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Leadership identity, influence, authentic leadership</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">AI transformation</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">AI readiness, responsible AI use, human-AI collaboration</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Critical decision-making</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Critical thinking, strategic reasoning, problem solving</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Talent development</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Professional identity and employability capital</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Employee engagement</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Meaning, belonging, emotional capital</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Change management</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Identity transitions, adaptability</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Team effectiveness</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Communication, collaboration, workplace dynamics</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Workplace well-being</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Emotional capital, resilience, psychological safety</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Diversity and inclusion</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Identity negotiation, belonging, inclusive workplaces</div>
+      </div>
+      <div class="pair-row">
+        <div class="challenge">Future-ready workforce</div>
+        <div class="connector"><svg viewBox="0 0 32 16"><line x1="0" y1="8" x2="26" y2="8"></line><circle cx="29" cy="8" r="3"></circle></svg></div>
+        <div class="expertise">Systems thinking, critical thinking, AI readiness</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="programmes">
+  <div class="wrap">
+    <div class="programme-toolbar">
+      <div class="section-head" style="margin-bottom:0;">
+        <p class="eyebrow">Professional Development Programmes</p>
+        <h2>13 evidence-based workshop tracks</h2>
+      </div>
+      <p style="color:var(--ink-soft);font-size:14.5px;max-width:34ch;">Tap any programme to see who it's for, what it covers, and how long it runs.</p>
+    </div>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">01</span>
+        <span class="prog-title">Strategic Communication Excellence</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">New hires</span><span class="chip">Early-career professionals</span><span class="chip">Technical specialists</span><span class="chip">Managers</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Professional communication</li><li>Workplace meetings</li><li>Active listening</li><li>Managing impressions</li><li>Digital presence</li><li>Communication across cultures</li><li>Difficult conversations</li><li>Influence and persuasion</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">02</span>
+        <span class="prog-title">Leadership Identity and Influence</span>
+        <span class="prog-duration">2–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">Emerging leaders</span><span class="chip">Team leaders</span><span class="chip">Supervisors</span><span class="chip">High-potential employees</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Leadership identity</li><li>Influence</li><li>Credibility</li><li>Difficult conversations</li><li>Authentic leadership</li><li>Executive presence</li><li>Leading uncertainty</li><li>Identity-based leadership</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">03</span>
+        <span class="prog-flag">Flagship</span>
+        <span class="prog-title">Systems Thinking for Modern Professionals</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Why It Matters</h4>
+          <p style="font-size:14.5px;color:var(--ink-soft);">One of the flagship offerings — helping teams see the whole system, not just their part of it.</p>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Systems thinking</li><li>Complexity</li><li>Interconnected decision-making</li><li>Stakeholder analysis</li><li>Strategic thinking</li><li>Organizational ecosystems</li><li>Unintended consequences</li><li>Adaptive problem solving</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">04</span>
+        <span class="prog-title">Professional Identity and Career Growth</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Professional influence</li><li>Personal branding</li><li>Career development</li><li>Visibility</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Networking</li><li>Professional capital</li><li>Identity negotiation</li><li>Career resilience</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">05</span>
+        <span class="prog-title">Workplace Inclusion, Belonging and Psychological Safety</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Inclusive communication</li><li>Identity and belonging</li><li>Psychological safety</li><li>Respectful workplaces</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Bias awareness</li><li>Trust and professional relationships</li><li>Inclusive leadership</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">06</span>
+        <span class="prog-title">High-Performing Teams</span>
+        <span class="prog-duration">2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Team communication</li><li>Collaboration</li><li>Workplace relationships</li><li>Trust</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Conflict management</li><li>Meeting effectiveness</li><li>Team culture</li><li>Shared purpose</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">07</span>
+        <span class="prog-title">Organizational Culture and Change</span>
+        <span class="prog-duration">2–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Organizational values</li><li>Identity during change</li><li>Workplace culture</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Employee engagement</li><li>Adaptability</li><li>Change leadership</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">08</span>
+        <span class="prog-flag">Flagship</span>
+        <span class="prog-title">Critical Thinking for the Modern Workplace</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">Managers</span><span class="chip">Engineers</span><span class="chip">Analysts</span><span class="chip">Public-sector staff</span><span class="chip">Professionals</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Evaluating evidence</li><li>Challenging assumptions</li><li>Detecting logical fallacies</li><li>Strategic reasoning</li><li>Asking better questions</li><li>Decision-making under uncertainty</li><li>Workplace problem solving</li><li>Critical thinking in meetings</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">09</span>
+        <span class="prog-title">AI Readiness and Human-Centered AI</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">All employees</span><span class="chip">Managers</span><span class="chip">Leadership teams</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Understanding AI</li><li>AI-assisted work</li><li>Prompting strategies</li><li>Human oversight</li><li>AI productivity</li><li>Responsible AI use</li><li>AI and leadership</li><li>AI and communication</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">10</span>
+        <span class="prog-flag">Distinctive</span>
+        <span class="prog-title">Critical Thinking and AI in the Workplace</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Why It Matters</h4>
+          <p style="font-size:14.5px;color:var(--ink-soft);">One of the most distinctive offerings — teaching people to think alongside AI, not just use it.</p>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Evaluating AI outputs</li><li>Detecting hallucinations</li><li>Fact-checking AI responses</li><li>Human judgment versus AI recommendations</li><li>AI-assisted decision-making</li><li>Responsible use of generative AI</li><li>Critical questioning techniques</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">11</span>
+        <span class="prog-flag">Signature</span>
+        <span class="prog-title">Emotional Capital for the Modern Workplace</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">Employees</span><span class="chip">Managers</span><span class="chip">Leaders</span><span class="chip">Change champions</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Emotional capital</li><li>Emotional awareness</li><li>Emotional regulation</li><li>Emotional agility</li><li>Workplace resilience</li><li>Empathy</li><li>Psychological well-being</li><li>Building supportive relationships</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">12</span>
+        <span class="prog-title">Emotional Capital and Leadership Excellence</span>
+        <span class="prog-duration">2–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Leadership resilience</li><li>Emotionally intelligent leadership</li><li>Leading through uncertainty</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Building psychologically safe teams</li><li>Empathetic communication</li><li>Emotional influence</li><li>Sustainable high performance</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">13</span>
+        <span class="prog-flag">Executive</span>
+        <span class="prog-title">Human Skills in the AI Workplace</span>
+        <span class="prog-duration">3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Why It Matters</h4>
+          <p style="font-size:14.5px;color:var(--ink-soft);">Positioned as a signature executive programme for senior leadership cohorts.</p>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Critical thinking</li><li>AI literacy</li><li>Human judgment</li><li>Emotional capital</li><li>Strategic communication</li><li>Leadership in AI-enabled workplaces</li></ul>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section id="flagship">
+  <div class="wrap">
+    <div class="flagship-card">
+      <p class="eyebrow">Premium Flagship Programme</p>
+      <h2>Thriving in the Modern Workplace<span class="tm">™</span></h2>
+      <p>A 5-day signature programme — the flagship corporate offering, taking a cohort from professional identity through to AI readiness.</p>
+      <div class="day-track">
+        <div class="day"><div class="day-num">Day 1</div><div class="day-title">Professional Identity and Leadership</div></div>
+        <div class="day"><div class="day-num">Day 2</div><div class="day-title">Strategic Communication Excellence</div></div>
+        <div class="day"><div class="day-num">Day 3</div><div class="day-title">Critical Thinking and Decision-Making</div></div>
+        <div class="day"><div class="day-num">Day 4</div><div class="day-title">Systems Thinking and Complexity</div></div>
+        <div class="day"><div class="day-num">Day 5</div><div class="day-title">AI Readiness and Emotional Capital</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="healthcare">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">For Healthcare Professionals in Singapore</p>
+      <h2>Programmes for Healthcare</h2>
+      <p style="color:var(--ink-soft);font-size:15px;max-width:58ch;margin-top:14px;">Singapore's healthcare workforce is being asked to do more with less: an ageing population, tight staffing, rising multimorbidity, and a fast-moving shift toward AI-assisted care. The same evidence base above — the SINM, and my research on emotional capital, critical thinking and professional identity — is adapted here for the ward, the clinic, and the hardest conversations in between.</p>
+    </div>
+
+    <div class="hero-actions" style="margin-top:0;margin-bottom:36px;">
+      <span class="prog-flag live" style="font-size:11.5px;padding:6px 12px;">Defusing Difficult Situations — Running Now</span>
+      <span class="prog-flag" style="font-size:11.5px;padding:6px 12px;">Complex Decision Making — In Development</span>
+    </div>
+
+    <div class="callout" style="max-width:66ch;margin-bottom:48px;margin-top:0;">
+      <strong>A note on where this expertise comes from:</strong> I'm an Assistant Professor at Singapore Institute of Technology, in the Centre for Professional Communication — the same institution that runs Singapore's principal nursing and allied health degree programmes. My own research is in professional identity, employability and workplace communication, not clinical practice. What I bring is how people become, and stay, trusted professionals inside a demanding system — exactly what a clinical career asks of someone every shift.
+    </div>
+
+    <p class="eyebrow">The Theoretical Foundation, Applied to Healthcare</p>
+    <h3 style="font-size:24px;margin:10px 0 18px 0;color:var(--teal-deep);">The same model — read for a clinical career</h3>
+    <p style="color:var(--ink-soft);font-size:15px;margin-bottom:24px;max-width:56ch;">Professional identity isn't fixed on a ward, either — it's negotiated, rotation by rotation. The SINM explains how a nurse, doctor or allied health professional positions and invests in a professional identity claim, and has that claim recognised — "warranted" — by the team, the hierarchy, and the system around them.</p>
+    <div class="sinm-components" style="max-width:900px;margin-bottom:56px;">
+      <div class="sinm-component">
+        <span class="label">Capital Portfolio</span>
+        <h4>Clinical Resources</h4>
+        <p>Qualifications, clinical hours, certifications, languages spoken, and the trust already built with patients and colleagues.</p>
+      </div>
+      <div class="sinm-component">
+        <span class="label">Workplace Ideologies</span>
+        <h4>Rules of the Ward</h4>
+        <p>The unwritten hierarchy, escalation norms, and "how things really get done" on a unit — rarely identical to what's written in the protocol.</p>
+      </div>
+      <div class="sinm-component">
+        <span class="label">Systems Capital</span>
+        <h4>Reading the Unit</h4>
+        <p>The capacity to read a ward's culture and align your clinical resources with it — often the real difference between two equally qualified colleagues' trajectories.</p>
+      </div>
+      <div class="sinm-component">
+        <span class="label">Identity Negotiation</span>
+        <h4>Claim → Warranting</h4>
+        <p>The ongoing process of claiming an identity — "ready for advanced practice," "a clinician the team trusts with ambiguous cases" — and having it recognised.</p>
+      </div>
+    </div>
+
+    <div class="programme-toolbar">
+      <div class="section-head" style="margin-bottom:0;">
+        <p class="eyebrow">Healthcare Professional Development Programmes</p>
+        <h2 style="font-size:26px;">Eight tracks, built for Singapore's clinical workplace</h2>
+      </div>
+      <p style="color:var(--ink-soft);font-size:14.5px;max-width:34ch;">Two tracks already run with clinical teams in Singapore. The rest apply the same evidence base to every ward, clinic and care team.</p>
+    </div>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">01</span>
+        <span class="prog-flag live">Running Now</span>
+        <span class="prog-title">Defusing Difficult Situations in Healthcare</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">Nurses</span><span class="chip">Doctors</span><span class="chip">Allied health professionals</span><span class="chip">Patient service associates</span><span class="chip">Medical social workers</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>De-escalation and staying regulated under provocation</li><li>Breaking bad news and holding space for grief</li><li>Managing complaints and difficult family dynamics</li><li>Assertive communication across a hierarchy</li><li>Protecting your own emotional capital after a hard shift</li><li>Repairing trust after a difficult encounter</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">02</span>
+        <span class="prog-flag">In Development</span>
+        <span class="prog-title">Complex Decision Making in Healthcare</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Ideal For</h4>
+          <div class="chip-row"><span class="chip">Senior nurses</span><span class="chip">Physicians</span><span class="chip">Allied health leads</span><span class="chip">Case managers</span><span class="chip">Clinical educators</span></div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Reasoning under uncertainty and incomplete information</li><li>Recognising cognitive bias and diagnostic anchoring</li><li>Navigating competing guidelines and constraints</li><li>Ethical dilemmas and resource allocation</li><li>Systems thinking across the care pathway</li><li>Documenting and defending a judgement call</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">03</span>
+        <span class="prog-title">Emotional Capital and Resilience for Healthcare Teams</span>
+        <span class="prog-duration">1–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Emotional regulation under sustained pressure</li><li>Compassion fatigue versus compassion</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Recovering between patients, not just shifts</li><li>Peer support and psychological safety</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">04</span>
+        <span class="prog-title">Professional Identity and Career Progression in Clinical Careers</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Building credibility across a clinical hierarchy</li><li>Navigating scope-of-practice transitions</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Visibility and voice in a clinical team</li><li>Career resilience through rotations and reorganisation</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">05</span>
+        <span class="prog-title">Interprofessional Teams and Speaking-Up Culture</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Psychological safety across ranks and professions</li><li>Structured escalation and closed-loop communication</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Receiving dissent without defensiveness</li><li>Trust-building across nursing, medical and allied health teams</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">06</span>
+        <span class="prog-title">AI Readiness for Healthcare Professionals</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>How clinical AI tools actually work, in plain terms</li><li>Human oversight and override</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Spotting AI error and bias in a clinical context</li><li>AI-assisted documentation without losing the patient's story</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">07</span>
+        <span class="prog-title">Leading Healthcare Teams Through Change</span>
+        <span class="prog-duration">2–3 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Leading identity transitions during restructuring</li><li>Building trust through change</li></ul>
+        </div>
+        <div>
+          <h4>&nbsp;</h4>
+          <ul class="topic-list"><li>Authentic clinical leadership</li><li>Sustaining team culture through disruption</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <details class="programme">
+      <summary>
+        <span class="prog-num">08</span>
+        <span class="prog-flag">New</span>
+        <span class="prog-title">Professional Identity and Belonging in a Multicultural Care Team</span>
+        <span class="prog-duration">1–2 days</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="prog-body">
+        <div>
+          <h4>Why It Matters</h4>
+          <p style="font-size:14.5px;color:var(--ink-soft);">Singapore's wards are among the most internationally staffed workplaces in the country. Built directly from the SINM's original research context — identity negotiation inside an unfamiliar system.</p>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul class="topic-list"><li>Identity negotiation for internationally-trained clinical staff</li><li>Reading unfamiliar workplace ideologies fast</li><li>Cross-cultural communication with patients and colleagues</li><li>Building trust across seniority and nationality</li><li>Retention through belonging, not just onboarding</li></ul>
+        </div>
+      </div>
+    </details>
+
+    <div class="flagship-card" style="margin-top:44px;">
+      <p class="eyebrow">Premium Healthcare Flagship Programme</p>
+      <h2>Thriving in Healthcare<span class="tm">™</span></h2>
+      <p>A multi-day signature programme for hospitals, clusters and care providers — taking a clinical cohort from identity and communication through to complex decisions and AI-ready practice.</p>
+      <div class="day-track">
+        <div class="day"><div class="day-num">Day 1</div><div class="day-title">Professional Identity and Belonging in Clinical Teams</div></div>
+        <div class="day"><div class="day-num">Day 2</div><div class="day-title">Defusing Difficult Situations in Healthcare</div></div>
+        <div class="day"><div class="day-num">Day 3</div><div class="day-title">Complex Decision Making in Healthcare</div></div>
+        <div class="day"><div class="day-num">Day 4</div><div class="day-title">Emotional Capital and Resilience for Healthcare Teams</div></div>
+        <div class="day"><div class="day-num">Day 5</div><div class="day-title">AI Readiness for Healthcare Professionals</div></div>
+      </div>
+    </div>
+
+    <div class="contrast-grid" style="margin-top:56px;">
+      <div class="contrast-card dim">
+        <h3>Most healthcare training covers</h3>
+        <ul>
+          <li>Customer service scripts</li>
+          <li>Generic communication skills</li>
+          <li>One-off resilience talks</li>
+          <li>Basic AI tool orientation</li>
+        </ul>
+      </div>
+      <div class="contrast-card bright">
+        <h3>I help healthcare teams develop professionals who can</h3>
+        <ul>
+          <li>Stay regulated in a genuinely difficult encounter</li>
+          <li>Reason defensibly through a complex, high-stakes decision</li>
+          <li>Use AI as a colleague, not a crutch or a threat</li>
+          <li>Build a professional identity that survives rotations and reorganisation</li>
+          <li>Speak up, and be heard, across a clinical hierarchy</li>
+          <li>Belong quickly, whether they trained in Singapore or arrived from abroad</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <p class="eyebrow">Who This Is For</p>
+      <div class="chip-row" style="margin-top:16px;">
+        <span class="chip">Hospitals &amp; clusters</span>
+        <span class="chip">Nursing leadership</span>
+        <span class="chip">Allied health departments</span>
+        <span class="chip">Nursing homes &amp; eldercare</span>
+        <span class="chip">Polyclinics &amp; primary care (Healthier SG)</span>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:48px;">
+      Ready to bring this to your hospital, cluster or care team? <a href="#contact" style="color:var(--teal-deep);font-weight:600;text-decoration:underline;">Book a discovery call ↓</a>
+    </div>
+  </div>
+</section>
+
 <section id="gallery">
   <div class="wrap">
     <div class="section-head">
@@ -22,3 +1022,208 @@
     </div>
   </div>
 </section>
+
+<section class="alt-bg" id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Publications</p>
+      <h2>Research by Dr Behnam Soltani</h2>
+      <p style="color:var(--ink-soft);font-size:15px;max-width:60ch;margin-top:14px;">Journal articles, books, book chapters and conference proceedings on graduate employability, professional identity, language socialization and workplace ideologies — the research base behind the SINM and every programme on this page.</p>
+      <div class="hero-actions" style="margin-top:22px;">
+        <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-primary">View Full Profile on Google Scholar</a>
+      </div>
+    </div>
+
+    <div class="pub-blocks-grid">
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Journal Articles</h3>
+        <ul class="pub-list">
+          <li>Academic Socialization as the Production and Negotiation of Social Space</li>
+          <li>Examining Space, Silence, and Agency in Language Socialization of an International Student in the EAP and Mainstream Courses</li>
+          <li>Employability Capitals as Essential Resources for Employment Obtainment and Career Sustainability of International Graduates</li>
+          <li>International Students' Employability: A Language Socialization Perspective</li>
+          <li>A Landscape of Practice Approach to Enhance Employability: Insights from Domestic and International Postgraduates</li>
+          <li>Being and Becoming an International Student: The Inter-relation Between Language Socialization and Identities</li>
+          <li>Workplace Ideologies, Employability and the Ideal Graduate Identities</li>
+          <li>From Imagined Community to Imagined Social Space: The Case of Three International Students</li>
+          <li>International Students' Language Socialization in an English-Medium University: A Socio-Spatial Lens</li>
+          <li>Implementing Feedback Literacy Practices Through Self-Assessment and Peer Feedback: A Language Socialization Perspective</li>
+          <li>Does the Association Between Self-Focus and Life Satisfaction Depend on the Levels of Perceived Societal Injustice?</li>
+          <li>Enhancing Critical Thinking Through Systems Thinking Integration: A Mixed-Methods Study of Student Learning Outcomes</li>
+          <li>Navigating the Hidden Curriculum: A Systemic Identity Negotiation Model of Graduate Employability</li>
+          <li>Cultural Fit and Workplace Ideologies: Understanding Employer Perceptions of Graduate Employability</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Books</h3>
+        <ul class="pub-list">
+          <li>Enhancing Student Education Transitions and Employability: From Theory to Practice</li>
+          <li>An Educator's Guide to Constructing Employable Identities</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Thesis</h3>
+        <ul class="pub-list">
+          <li>International Students' Language Socialization in New Zealand Tertiary Institutions: A Spatial Analysis</li>
+        </ul>
+      </div>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Book Chapters</h3>
+        <ul class="pub-list">
+          <li>International Students' Socialization and Transition Experiences in High School</li>
+          <li>Transitioning to Vocational Education</li>
+          <li>Enhancing Student Transition Experiences: The Role of Students in Proactively Building Essential Resources</li>
+          <li>Enhancing Student Transition Experiences: The Role of Institutions in Creating Opportunities for Students to Build Essential Resources</li>
+          <li>Enhancing Student Transition Experiences: Initiatives Guiding the Development of Essential Resources</li>
+          <li>Theorizing Graduate Employability and Identities</li>
+          <li>Contextualizing Graduate Identities</li>
+          <li>From Theory to Practice: Understanding Graduate Identities Through a Three-Level Framework</li>
+          <li>The Australian Context: A Market-Driven Landscape for Graduate Identity Construction</li>
+          <li>Negotiating Graduate Identities in the Aotearoa New Zealand Context</li>
+          <li>A Comparative Analysis of Graduate Identity Construction in Australia, New Zealand, and Singapore</li>
+          <li>Navigating Identities</li>
+          <li>Claiming/Disclaiming Identities</li>
+          <li>Affirming/Disaffirming Identities</li>
+          <li>Imposing Identities</li>
+          <li>Envisioning Identities</li>
+          <li>Systems Capital</li>
+          <li>Workplace Ideologies</li>
+          <li>Strategic Imperatives for Tertiary Institutions: Navigating the Employability Dispositif and Fostering Collective Graduate Identities</li>
+          <li>The Evolving Partnership with Employers: From Gatekeepers to Validators</li>
+          <li>The Facilitator as a Systems Architect for Graduate Identity</li>
+          <li>Empowering Learners as Agents of Their Identities in a Complex Systemic Landscape</li>
+        </ul>
+      </div>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Conference Papers and Proceedings</h3>
+        <ul class="pub-list">
+          <li>What Makes Graduates Employable? Perspectives of New Zealand Employers</li>
+          <li>Development of a Contemporary Model of Vocational Practice: Its Potential for Students in Vocational Education and Training</li>
+          <li>Assessment for Learning Through Self-Assessment and Peer Feedback</li>
+          <li>International Students' Capability Construction in a New Zealand Tertiary Institute</li>
+          <li>Assessment for Learning in Tertiary Education</li>
+          <li>Supervisor-Supervisee Interactions in a New Zealand Tertiary Institute</li>
+          <li>International Students' Narratives of Self-Assessment</li>
+          <li>School Policies and Social Connections in a Superdiverse New Zealand High School</li>
+          <li>International Students' Narratives of Socialization in a Superdiverse New Zealand High School</li>
+          <li>L2 Learning and Social Space: A Socio-Interpretive Turn in L2 Learning</li>
+          <li>Where Does Space Fit in Our Methodology?</li>
+          <li>L2 Identity and Social Space</li>
+          <li>International Students' Socialization in Tertiary Institutes in New Zealand</li>
+          <li>L2 Identity and Language Learning</li>
+          <li>Socialization of International Students at a New Zealand University</li>
+          <li>"I Am a Fool in the Classroom!"</li>
+          <li>Voices Behind Silence</li>
+          <li>L2 Identity and Socio-Academic Space</li>
+          <li>L2 Identity and Space: The Case of a Chinese International Student at a New Zealand University</li>
+          <li>"If I Don't Show My Emotions to My Face, People Don't Realize So": Telling Lives in the Classroom</li>
+          <li>"Shy for Them Is Not a Word in Their Mind": Spatiality and L2 Identity Construction</li>
+          <li>Spatiality and Language Socialization: A Case Study of an International Student's Socialization in His L2 Socio-Academic Space in a Tertiary Institute in New Zealand</li>
+          <li>The Narrative Construction of Identities in Critical Education</li>
+          <li>"If You Are Older Than the Others, You Must Speak for Them": A Case Study of a Pacific Islander Student's Interaction at a New Zealand University</li>
+          <li>Language, Culture, Power, and Imagined Community: A Case Study of an International Student's Participation at University</li>
+          <li>Participation, Imagined Communities, and Language Learning</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Other Scholarly Publications</h3>
+        <ul class="pub-list">
+          <li>Developing Capabilities in a New Zealand Tertiary Institution: From Foreign Learners to Socialized International Students</li>
+          <li>The Pedagogies of Becoming: The Case of Supervisor-Supervisee Interactions in a Master of Professional Practice Programme in New Zealand</li>
+          <li>An MPP Journey of Inspiration, Perspiration and Application</li>
+          <li>My MPP Journey of Inspiration, Perspiration and Application</li>
+          <li>Digital Spaces of Engagement: Perspectives on Using Zoom and Virtual Spaces in Online Classrooms</li>
+          <li>Pathways to Participation: Insights on Disability Inclusion at Asian Conferences</li>
+          <li>Capability Reconceptualized: Towards a Landscape of Practice Approach in Graduate Employability</li>
+          <li>The Treaty Times Thirty</li>
+          <li>Competencies Contextualized: Towards a Spatiotemporal Lens</li>
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3>Book Reviews</h3>
+        <ul class="pub-list">
+          <li>Review of Exploring Professional Communication: Language in Action</li>
+          <li>Review of L2 Learning as Social Practice: Conversation-Analytic Perspectives</li>
+          <li>Book Review: Exploring Professional Communication: Language in Action</li>
+          <li>Book Review: Analyzing Narrative: Discourse and Sociolinguistic Perspectives</li>
+          <li>Book Review: An Introduction to Sociolinguistics: Society and Identity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero-actions" style="margin-top:8px;">
+      <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-ghost">Dr Behnam Soltani on Google Scholar ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The Strongest Marketing Message</p>
+      <h2>What sets this apart</h2>
+    </div>
+    <div class="contrast-grid">
+      <div class="contrast-card dim">
+        <h3>Most trainers sell</h3>
+        <ul>
+          <li>Communication</li>
+          <li>Leadership</li>
+          <li>Teamwork</li>
+          <li>Emotional intelligence</li>
+        </ul>
+      </div>
+      <div class="contrast-card bright">
+        <h3>I help organizations develop professionals who can</h3>
+        <ul>
+          <li>Think critically</li>
+          <li>Build emotional capital</li>
+          <li>Work effectively with AI</li>
+          <li>Communicate strategically</li>
+          <li>Navigate complexity</li>
+          <li>Lead with confidence</li>
+          <li>Build meaningful professional identities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's design your programme</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Book a Discovery Call</h3>
+        <p>A short conversation to understand your team's challenges and goals.</p>
+        <a href="mailto:behnam.soltani14@gmail.com?subject=Discovery%20Call" class="btn btn-primary">Email to Book</a>
+      </div>
+      <div class="contact-card">
+        <h3>Request an In-House Programme</h3>
+        <p>Bring any of the 13 tracks, or the 5-day flagship, directly to your organization.</p>
+        <a href="mailto:behnam.soltani14@gmail.com?subject=In-House%20Programme" class="btn btn-ghost">Request Details</a>
+      </div>
+      <div class="contact-card">
+        <h3>Custom Programme Design</h3>
+        <p>A bespoke workshop built around your specific business challenge.</p>
+        <a href="mailto:behnam.soltani14@gmail.com?subject=Custom%20Programme" class="btn btn-ghost">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Dr Behnam Soltani — Professional Development &amp; Workshops. Email: behnam.soltani@singaporetech.edu.sg, Mobile: +6585255706</div>
+</footer>
+
+</body>
+</html>
