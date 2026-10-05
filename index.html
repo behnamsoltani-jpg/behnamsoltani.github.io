@@ -268,12 +268,7 @@
   .gallery-item .placeholder-label strong{display:block;color:var(--teal-deep);font-family:'Zilla Slab',serif;font-size:15px;margin-bottom:6px;}
   .gallery-item .placeholder-label code{font-size:11.5px;background:var(--bg-alt);padding:2px 6px;border-radius:4px;}
 
-  /* ---------- RESEARCH / PUBLICATIONS ---------- */<div class="pub-block">
-  <h3>Thesis</h3>
-  <ul class="pub-list">
-    <li>International Students' Language Socialization in New Zealand Tertiary Institutions: A Spatial Analysis</li>
-  </ul>
-</div>
+  /* ---------- RESEARCH / PUBLICATIONS ---------- */
   .pub-blocks-grid{display:flex;flex-wrap:wrap;gap:0 56px;margin-top:16px;}
   .pub-block{flex:1 1 440px;margin-bottom:40px;}
   .pub-block h3{
@@ -286,6 +281,33 @@
     line-height:1.45;
   }
   .pub-list li:last-child{border-bottom:none;}
+  .pub-list li a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere;}
+  .pub-list li a:hover{color:var(--teal-deep);}
+  .pub-list li em{font-style:italic;}
+  .pub-group{
+    flex-basis:100%;margin:8px 0 22px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  }
+
+  /* ---------- BOOKS ---------- */
+  .book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,220px));gap:40px;}
+  .book-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;}
+  .book-cover{
+    aspect-ratio:2/3;width:100%;background:var(--teal-tint);border-radius:6px;overflow:hidden;
+    box-shadow:0 10px 24px rgba(19,48,47,.16);margin-bottom:14px;transition:transform .2s ease;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .book-cover img{width:100%;height:100%;object-fit:cover;display:block;}
+  .book-cover .cover-fallback{display:none;padding:14px;text-align:center;font-family:'Zilla Slab',serif;font-size:14px;color:var(--teal-deep);line-height:1.3;}
+  .book-cover.no-img img{display:none;}
+  .book-cover.no-img .cover-fallback{display:block;}
+  .book-card:hover .book-cover,.book-card:focus-visible .book-cover{transform:translateY(-3px);}
+  .book-card:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:6px;}
+  .book-title{font-family:'Zilla Slab',serif;font-size:15px;font-weight:600;color:var(--teal-deep);line-height:1.3;margin:0 0 6px;}
+  .book-meta{font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;}
+  @media (max-width:860px){.book-grid{grid-template-columns:repeat(2,minmax(0,200px));gap:28px;}}
+  @media (max-width:520px){.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}}
+  @media (prefers-reduced-motion:reduce){.book-cover{transition:none;}}
 
   @media (max-width:860px){
     nav.links{
@@ -1048,125 +1070,167 @@
       <h2>Research by Dr Behnam Soltani</h2>
       <p style="color:var(--ink-soft);font-size:15px;max-width:60ch;margin-top:14px;">Journal articles, books, book chapters and conference proceedings on graduate employability, professional identity, language socialization and workplace ideologies — the research base behind the SINM and every programme on this page.</p>
       <div class="hero-actions" style="margin-top:22px;">
-        <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-primary">View Full Profile on Google Scholar</a>
+        <a href="https://scholar.google.co.nz/citations?user=PYyfjaMAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener" class="btn btn-primary">View Full Profile on Google Scholar</a>
       </div>
     </div>
     <div class="pub-blocks-grid">
+      <p class="pub-group">Publications</p>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Books</h3>
+        <div class="book-grid">
+          <a class="book-card" href="https://www.routledge.com/An-Educators-Guide-to-Constructing-Employable-Identities/Soltani-Ong/p/book/9781041020615" target="_blank" rel="noopener">
+            <div class="book-cover">
+              <img src="images/books/educators-guide.jpg" alt="Cover of An Educator&rsquo;s Guide to Constructing Employable Identities" loading="lazy" onerror="this.parentNode.classList.add('no-img')" onload="if(this.naturalWidth<60)this.parentNode.classList.add('no-img')">
+              <span class="cover-fallback">An Educator&rsquo;s Guide to Constructing Employable Identities</span>
+            </div>
+            <p class="book-title">An Educator&rsquo;s Guide to Constructing Employable Identities</p>
+            <p class="book-meta">Behnam Soltani &amp; Kenneth Keng Wee Ong &middot; Routledge, 2026</p>
+          </a>
+          <a class="book-card" href="https://www.routledge.com/Enhancing-Student-Education-Transitions-and-Employability-From-Theory-to-Practice/Pham-Soltani/p/book/9780367768324" target="_blank" rel="noopener">
+            <div class="book-cover">
+              <img src="images/books/enhancing-transitions.jpg" alt="Cover of Enhancing Student Education Transitions and Employability: From Theory to Practice" loading="lazy" onerror="this.parentNode.classList.add('no-img')" onload="if(this.naturalWidth<60)this.parentNode.classList.add('no-img')">
+              <span class="cover-fallback">Enhancing Student Education Transitions and Employability: From Theory to Practice</span>
+            </div>
+            <p class="book-title">Enhancing Student Education Transitions and Employability: From Theory to Practice</p>
+            <p class="book-meta">Thanh Pham &amp; Behnam Soltani &middot; Routledge, 2021</p>
+          </a>
+          <a class="book-card" href="https://issuu.com/op6137/docs/space_v2" target="_blank" rel="noopener">
+            <div class="book-cover">
+              <img src="images/books/third-space.jpg" alt="Cover of Third Space: Where Oriental Persian Calligraphy and Western Abstract Painting Meet" loading="lazy" onerror="this.parentNode.classList.add('no-img')" onload="if(this.naturalWidth<60)this.parentNode.classList.add('no-img')">
+              <span class="cover-fallback">Third Space: Where Oriental Persian Calligraphy and Western Abstract Painting Meet</span>
+            </div>
+            <p class="book-title">Third Space: Where Oriental Persian Calligraphy and Western Abstract Painting Meet</p>
+            <p class="book-meta">Michael Greaves &amp; Behnam Soltani &middot; Dunedin Print, 2019</p>
+          </a>
+        </div>
+      </div>
+
       <div class="pub-block" style="flex-basis:100%;">
         <h3>Journal Articles</h3>
         <ul class="pub-list">
-          <li>Academic Socialization as the Production and Negotiation of Social Space</li>
-          <li>Examining Space, Silence, and Agency in Language Socialization of an International Student in the EAP and Mainstream Courses</li>
-          <li>Employability Capitals as Essential Resources for Employment Obtainment and Career Sustainability of International Graduates</li>
-          <li>International Students' Employability: A Language Socialization Perspective</li>
-          <li>A Landscape of Practice Approach to Enhance Employability: Insights from Domestic and International Postgraduates</li>
-          <li>Being and Becoming an International Student: The Inter-relation Between Language Socialization and Identities</li>
-          <li>Workplace Ideologies, Employability and the Ideal Graduate Identities</li>
-          <li>From Imagined Community to Imagined Social Space: The Case of Three International Students</li>
-          <li>International Students' Language Socialization in an English-Medium University: A Socio-Spatial Lens</li>
-          <li>Implementing Feedback Literacy Practices Through Self-Assessment and Peer Feedback: A Language Socialization Perspective</li>
-          <li>Does the Association Between Self-Focus and Life Satisfaction Depend on the Levels of Perceived Societal Injustice?</li>
-          <li>Enhancing Critical Thinking Through Systems Thinking Integration: A Mixed-Methods Study of Student Learning Outcomes</li>
-          <li>Navigating the Hidden Curriculum: A Systemic Identity Negotiation Model of Graduate Employability</li>
-          <li>Cultural Fit and Workplace Ideologies: Understanding Employer Perceptions of Graduate Employability</li>
+          <li>Soltani, B. (2026). From showcase to negotiation: Re-theorising e-portfolios as tools for systemic identity construction. <em>Higher Education Research &amp; Development</em>, 1–18. <a href="https://doi.org/10.1080/07294360.2026.2730961" target="_blank" rel="noopener">https://doi.org/10.1080/07294360.2026.2730961</a></li>
+          <li>Soltani, B. (2026). Navigating the hidden curriculum: A systemic identity negotiation model of graduate employability. <em>Studies in Higher Education</em>. <a href="https://doi.org/10.1080/03075079.2026.2704764" target="_blank" rel="noopener">https://doi.org/10.1080/03075079.2026.2704764</a></li>
+          <li>Soltani, B., Pham, T., &amp; Joshanloo, M. (2026). Workplace ideologies, employability, and ideal graduate identities. <em>Globalisation, Societies and Education, 24</em>(5), 1518–1531. <a href="https://doi.org/10.1080/14767724.2024.2433164" target="_blank" rel="noopener">https://doi.org/10.1080/14767724.2024.2433164</a></li>
+          <li>Soltani, B., &amp; Zhang, L. J. (2025). Implementing feedback literacy practices through self-assessment and peer feedback: A language socialization perspective. <em>Australian Review of Applied Linguistics, 48</em>(2), 425–450.</li>
+          <li>Pham, T., Soltani, B., &amp; Singh, J. K. N. (2024). Employability capitals as essential resources for employment obtainment and career sustainability of international graduates. <em>Journal of Further and Higher Education, 48</em>(4), 436–448. <a href="https://doi.org/10.1080/0309877X.2024.2344771" target="_blank" rel="noopener">https://doi.org/10.1080/0309877X.2024.2344771</a></li>
+          <li>Soltani, B., &amp; Donald, W. E. (2024). A landscape of practice approach to enhance employability: Insights from domestic and international postgraduates. <em>Higher Education, Skills and Work-Based Learning, 14</em>(6), 1340–1353. <a href="https://doi.org/10.1108/HESWBL-11-2023-0320" target="_blank" rel="noopener">https://doi.org/10.1108/HESWBL-11-2023-0320</a></li>
+          <li>Soltani, B., &amp; Tomlinson, M. (2024). International students’ employability: A language socialization perspective. <em>Education + Training, 66</em>(2/3), 213–232. <a href="https://doi.org/10.1108/ET-07-2022-0265" target="_blank" rel="noopener">https://doi.org/10.1108/ET-07-2022-0265</a></li>
+          <li>Soltani, B., &amp; Zegwaard, K. (2024). Capability reconceptualized: A landscape of practice approach to graduate employability. <em>International Journal of Work-Integrated Learning, 25</em>(4), 603–617.</li>
+          <li>Soltani, B., &amp; Tran, L. (2023). Examining space, silence, and agency in language socialization of an international student in the EAP and mainstream courses. <em>TESOL Quarterly, 57</em>(2), 480–510. <a href="https://doi.org/10.1002/tesq.3164" target="_blank" rel="noopener">https://doi.org/10.1002/tesq.3164</a></li>
+          <li>Soltani, B., Tran, L., &amp; Reza, A. (2022). On being and becoming an international student: The inter-relation between socialization and identities [Manuscript under review]. <em>Journal of Educational Linguistics, 1</em>(2), 238–266.</li>
+          <li>Joshanloo, M., &amp; Soltani, B. (2022). Does the association between self-focus and life satisfaction depend on the levels of perceived societal injustice? <em>Personality and Individual Differences, 201</em>, Article 111922.</li>
+          <li>Soltani, B., &amp; Tran, L. (2021). From imagined community to imagined social space: The case of three international students. <em>Transitions: Journal of Transient Migration, 5</em>(2), 123–143.</li>
+          <li>Soltani, B., &amp; Zhang, L. J. (2021). International students’ language socialization in an English-medium university: A socio-spatial lens. <em>Australian Review of Applied Linguistics, 46</em>(3), 316–338.</li>
+          <li>Soltani, B. (2019). The pedagogies of becoming: The case of supervisor-supervisee interactions in a Masters of Professional Practice Program in New Zealand. <em>Scope, 4</em>, 9–13.</li>
+          <li>Soltani, B. (2018). Academic socialization as the production and negotiation of social space. <em>Linguistics and Education, 45</em>, 20–30.</li>
+          <li>Soltani, B., &amp; Loret, J. P. (2018). Developing capabilities at a New Zealand tertiary institute: From foreign learners to socialized international students. <em>Scope, 5</em>, 47–51.</li>
+          <li>Harrison, J., Dowman, A., &amp; Soltani, B. (2017). My journey of inspiration, perspiration and application. <em>Scope, 2</em>, 33–40.</li>
         </ul>
       </div>
-      <div class="pub-block" style="flex-basis:100%;">
-            <div class="pub-block">
-        <h3>Thesis</h3>
-        <ul class="pub-list">
-          <li>International Students' Language Socialization in New Zealand Tertiary Institutions: A Spatial Analysis</li>
-        </ul>
-      </div>
+
       <div class="pub-block" style="flex-basis:100%;">
         <h3>Book Chapters</h3>
         <ul class="pub-list">
-          <li>International Students' Socialization and Transition Experiences in High School</li>
-          <li>Transitioning to Vocational Education</li>
-          <li>Enhancing Student Transition Experiences: The Role of Students in Proactively Building Essential Resources</li>
-          <li>Enhancing Student Transition Experiences: The Role of Institutions in Creating Opportunities for Students to Build Essential Resources</li>
-          <li>Enhancing Student Transition Experiences: Initiatives Guiding the Development of Essential Resources</li>
-          <li>Theorizing Graduate Employability and Identities</li>
-          <li>Contextualizing Graduate Identities</li>
-          <li>From Theory to Practice: Understanding Graduate Identities Through a Three-Level Framework</li>
-          <li>The Australian Context: A Market-Driven Landscape for Graduate Identity Construction</li>
-          <li>Negotiating Graduate Identities in the Aotearoa New Zealand Context</li>
-          <li>A Comparative Analysis of Graduate Identity Construction in Australia, New Zealand, and Singapore</li>
-          <li>Navigating Identities</li>
-          <li>Claiming/Disclaiming Identities</li>
-          <li>Affirming/Disaffirming Identities</li>
-          <li>Imposing Identities</li>
-          <li>Envisioning Identities</li>
-          <li>Systems Capital</li>
-          <li>Workplace Ideologies</li>
-          <li>Strategic Imperatives for Tertiary Institutions: Navigating the Employability Dispositif and Fostering Collective Graduate Identities</li>
-          <li>The Evolving Partnership with Employers: From Gatekeepers to Validators</li>
-          <li>The Facilitator as a Systems Architect for Graduate Identity</li>
-          <li>Empowering Learners as Agents of Their Identities in a Complex Systemic Landscape</li>
+          <li>Soltani, B., McAteer, R. E., &amp; Vincent, M. T. P. (2027). The equity-minded practitioner: Employability, identities, and an inclusive ecosystem. In W. Donald (Ed.), <em>The research handbook on higher education and employability</em> (pp. 125–142). Edward Elgar Publishing.</li>
+          <li>Vincent, M. T. P., Soltani, B., &amp; McAteer, R. E. (2026). Pathways to participation: Insights on disability inclusion at Asian conferences. In W. Donald (Ed.), <em>How to organise inclusive conferences and workshops</em> (pp. 46–60). Edward Elgar Publishing.</li>
+          <li>Soltani, B. (2027). From theory to practice: Understanding graduate identities through a three-level framework. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). The Australian context: A market-driven landscape for graduate identity construction. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Negotiating graduate identities in the Aotearoa New Zealand context. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). A comparative analysis of graduate identity construction in Australia, New Zealand, and Singapore. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Navigating identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Claiming/disclaiming identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Affirming/disaffirming identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Imposing identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Envisioning identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Systems capital. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Workplace ideologies. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Strategic imperatives for tertiary institutions: Navigating the employability dispositif and fostering collective graduate identities. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). The evolving partnership with employers: From gatekeepers to validators. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). Empowering learners as agents of their identities in a complex systemic landscape. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Soltani, B. (2027). The facilitator as a systems architect for graduate identity. In B. Soltani &amp; K. K. W. Ong (Eds.), <em>An educator’s guide to constructing employable identities</em>. Routledge.</li>
+          <li>Ishii, D. N., &amp; Soltani, B. (2021). Digital spaces of engagement: Perspectives on using Zoom and virtual spaces in online classrooms. In I. Fayed &amp; J. Cummings (Eds.), <em>Teaching in the post COVID-19 era: World education dilemmas, teaching innovations and solutions in the age of crisis</em>. Springer Nature. <a href="https://doi.org/10.1007/978-3-030-74088-7_1" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-030-74088-7_1</a></li>
+          <li>Pham, T., &amp; Soltani, B. (2021). Enhancing student transition experiences: The role of institutions in creating opportunities for students to build essential resources. In T. Pham &amp; B. Soltani, <em>Enhancing student education transitions and employability: From theory to practice</em>. Routledge.</li>
+          <li>Pham, T., &amp; Soltani, B. (2021). Exemplar programs and activities to enhance transition experiences of students. In T. Pham &amp; B. Soltani, <em>Enhancing student education transitions and employability: From theory to practice</em>. Routledge.</li>
+          <li>Pham, T., &amp; Soltani, B. (2021). Supporting students to prepare for transitions: The role of students. In T. Pham &amp; B. Soltani, <em>Enhancing student education transitions and employability: From theory to practice</em>. Routledge.</li>
+          <li>Soltani, B. (2021). International students’ socialization and transition experiences in high school: An empirical study. In T. Pham &amp; B. Soltani, <em>Enhancing student education transitions and employability: From theory to practice</em>. Routledge.</li>
+          <li>Soltani, B. (2021). Transitioning to vocational education: An investigation in experiences of international students. In T. Pham &amp; B. Soltani, <em>Enhancing student education transitions and employability: From theory to practice</em>. Routledge.</li>
         </ul>
       </div>
 
       <div class="pub-block" style="flex-basis:100%;">
-        <h3>Conference Papers and Proceedings</h3>
+        <h3>Conference Proceedings</h3>
         <ul class="pub-list">
-          <li>What Makes Graduates Employable? Perspectives of New Zealand Employers</li>
-          <li>Development of a Contemporary Model of Vocational Practice: Its Potential for Students in Vocational Education and Training</li>
-          <li>Assessment for Learning Through Self-Assessment and Peer Feedback</li>
-          <li>International Students' Capability Construction in a New Zealand Tertiary Institute</li>
-          <li>Assessment for Learning in Tertiary Education</li>
-          <li>Supervisor-Supervisee Interactions in a New Zealand Tertiary Institute</li>
-          <li>International Students' Narratives of Self-Assessment</li>
-          <li>School Policies and Social Connections in a Superdiverse New Zealand High School</li>
-          <li>International Students' Narratives of Socialization in a Superdiverse New Zealand High School</li>
-          <li>L2 Learning and Social Space: A Socio-Interpretive Turn in L2 Learning</li>
-          <li>Where Does Space Fit in Our Methodology?</li>
-          <li>L2 Identity and Social Space</li>
-          <li>International Students' Socialization in Tertiary Institutes in New Zealand</li>
-          <li>L2 Identity and Language Learning</li>
-          <li>Socialization of International Students at a New Zealand University</li>
-          <li>"I Am a Fool in the Classroom!"</li>
-          <li>Voices Behind Silence</li>
-          <li>L2 Identity and Socio-Academic Space</li>
-          <li>L2 Identity and Space: The Case of a Chinese International Student at a New Zealand University</li>
-          <li>"If I Don't Show My Emotions to My Face, People Don't Realize So": Telling Lives in the Classroom</li>
-          <li>"Shy for Them Is Not a Word in Their Mind": Spatiality and L2 Identity Construction</li>
-          <li>Spatiality and Language Socialization: A Case Study of an International Student's Socialization in His L2 Socio-Academic Space in a Tertiary Institute in New Zealand</li>
-          <li>The Narrative Construction of Identities in Critical Education</li>
-          <li>"If You Are Older Than the Others, You Must Speak for Them": A Case Study of a Pacific Islander Student's Interaction at a New Zealand University</li>
-          <li>Language, Culture, Power, and Imagined Community: A Case Study of an International Student's Participation at University</li>
-          <li>Participation, Imagined Communities, and Language Learning</li>
+          <li>Soltani, B. (2025). Cultural fit and workplace ideologies: Understanding employer perceptions of graduate employability. In <em>EDULEARN25 Proceedings</em> (pp. 2459–2463).</li>
+          <li>Soltani, B., &amp; Ong, K. K. W. (2025). Enhancing critical thinking through systems thinking integration: A mixed-methods study of student learning outcomes. In <em>EDULEARN25 Proceedings</em> (pp. 2535–2538).</li>
         </ul>
       </div>
 
-      <div class="pub-block">
-        <h3>Other Scholarly Publications</h3>
-        <ul class="pub-list">
-          <li>Developing Capabilities in a New Zealand Tertiary Institution: From Foreign Learners to Socialized International Students</li>
-          <li>The Pedagogies of Becoming: The Case of Supervisor-Supervisee Interactions in a Master of Professional Practice Programme in New Zealand</li>
-          <li>An MPP Journey of Inspiration, Perspiration and Application</li>
-          <li>My MPP Journey of Inspiration, Perspiration and Application</li>
-          <li>Digital Spaces of Engagement: Perspectives on Using Zoom and Virtual Spaces in Online Classrooms</li>
-          <li>Pathways to Participation: Insights on Disability Inclusion at Asian Conferences</li>
-          <li>Capability Reconceptualized: Towards a Landscape of Practice Approach in Graduate Employability</li>
-          <li>The Treaty Times Thirty</li>
-          <li>Competencies Contextualized: Towards a Spatiotemporal Lens</li>
-        </ul>
-      </div>
-
-      <div class="pub-block">
+      <div class="pub-block" style="flex-basis:100%;">
         <h3>Book Reviews</h3>
         <ul class="pub-list">
-          <li>Review of Exploring Professional Communication: Language in Action</li>
-          <li>Review of L2 Learning as Social Practice: Conversation-Analytic Perspectives</li>
-          <li>Book Review: Exploring Professional Communication: Language in Action</li>
-          <li>Book Review: Analyzing Narrative: Discourse and Sociolinguistic Perspectives</li>
-          <li>Book Review: An Introduction to Sociolinguistics: Society and Identity</li>
+          <li>Soltani, B. (2013). [Review of the book <em>Analyzing narratives</em>]. <em>Language in Society</em>.</li>
+          <li>Soltani, B. (2013). [Review of the book <em>Exploring professional communication: Language in action</em>]. <em>Discourse &amp; Society</em>.</li>
+          <li>Soltani, B. (2013). [Review of the book <em>The narrative construction of identity in critical education</em>]. <em>Discourse Studies</em>.</li>
+          <li>Soltani, B. (2012). [Review of the book <em>An introduction to sociolinguistics: Society and identity</em>]. <em>Discourse Studies</em>.</li>
+          <li>Soltani, B. (2012). [Review of the book <em>L2 learning as social practice: Conversation-analytic perspectives</em>]. <em>Discourse &amp; Society</em>.</li>
         </ul>
       </div>
+
+      <p class="pub-group">Presentations</p>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Conference Presentations</h3>
+        <ul class="pub-list">
+          <li>Soltani, B. (2021, December 10–11). <em>Graduate employability: A language socialization lens</em> [Paper presentation]. NZDC Conference, Online, New Zealand.</li>
+          <li>Soltani, B. (2020, December 4–8). <em>International students’ perceptions of career readiness in vocational education</em> [Paper presentation]. ISANA Conference, Online, Australia.</li>
+          <li>Soltani, B. (2020, September 25). <em>Toward a model of capability construction: A landscape of practice perspective</em> [Paper presentation]. ITP Research Symposium, Online, New Zealand.</li>
+          <li>Soltani, B. (2019, December 1–5). <em>What makes graduates employable? Perspectives of New Zealand employers</em> [Paper presentation]. Australian Association for Research in Education (AARE) Annual Conference, Queensland University of Technology, Brisbane, Australia.</li>
+          <li>Soltani, B. (2018, August 15–17). <em>Development of a contemporary model of vocational practice: Its potential for students in vocational education and training</em> [Paper presentation]. 27th National VET Research Conference “No Frills”: Skills for Global Future: Working and Learning Together, Sydney, Australia.</li>
+          <li>Soltani, B. (2018, June). <em>International students’ capability construction in a New Zealand tertiary institute</em> [Paper presentation]. Sociolinguistics Symposium, University of Auckland, Auckland, New Zealand. <a href="http://programme.exordo.com/ss22/delegates/presentation/764/" target="_blank" rel="noopener">http://programme.exordo.com/ss22/delegates/presentation/764/</a></li>
+          <li>Soltani, B. (2018, June). <em>Assessment for learning through self-assessment and peer feedback</em> [Paper presentation]. EdMedia Conference, Amsterdam, The Netherlands.</li>
+          <li>Soltani, B. (2017, December 6–9). <em>Supervisor-supervisee interactions in a New Zealand tertiary institute</em> [Paper presentation]. NZDC Conference, Auckland University of Technology, Auckland, New Zealand.</li>
+          <li>Soltani, B. (2017, November 29–December 1). <em>International students’ narratives of self-assessment</em> [Paper presentation]. Assessing Learning Conference, Dunedin, New Zealand.</li>
+          <li>Soltani, B. (2016, November 9–11). <em>International students’ narratives of socialization in a superdiverse New Zealand high school</em> [Paper presentation]. Pathways, Circuits and Crossroads 2016 Conference: From Global to Local: Impacts of International Migration, Mobility and Diversity, MBIE, Wellington, New Zealand.</li>
+          <li>Soltani, B. (2016, June 23–24). <em>School policies and social connections in a superdiverse New Zealand high school</em> [Paper presentation]. IRiS Conference: Frontiers and Borders of Superdiversity, Birmingham, United Kingdom.</li>
+          <li>Soltani, B. (2015, November 23–25). <em>L2 learning and social space: A socio-interpretive turn in L2 learning</em> [Paper presentation]. Language, Education, and Diversity International Conference 2015, University of Auckland, Auckland, New Zealand.</li>
+          <li>Soltani, B. (2014, August 28–29). <em>International students’ socialization in tertiary institutes in New Zealand</em> [Paper presentation]. ISANA NZ Conference, Auckland, New Zealand.</li>
+          <li>Soltani, B. (2014, August 10–15). <em>Spatial dialectics and international students’ socialization in their L2 academic context in New Zealand</em> [Paper presentation]. 17th World Congress of the International Association of Applied Linguistics (AILA), Brisbane, Australia.</li>
+          <li>Soltani, B. (2014, July 10–13). <em>L2 identity and social space</em> [Paper presentation]. CLESOL Conference, Victoria University of Wellington, Wellington, New Zealand.</li>
+          <li>Soltani, B. (2014, May 30). <em>Where does space fit in our methodology?</em> [Paper presentation]. Discourse Symposium, Victoria University of Wellington, Wellington, New Zealand.</li>
+          <li>Soltani, B. (2013, December). <em>Spatiality and language socialization: A case study of an international student’s socialization in his L2 socio-academic space in a tertiary institute in New Zealand</em> [Paper presentation]. NZDC4, Auckland University of Technology, Auckland, New Zealand.</li>
+          <li>Soltani, B. (2013, November 28). <em>“Shy for them is not a word in their mind”: Spatiality and L2 identity construction</em> [Colloquium paper]. ALANZ–ALAA Conference, Victoria University of Wellington, Wellington, New Zealand.</li>
+          <li>Soltani, B. (2013, November 27). <em>“If I don’t show my emotions to my face, people don’t realize so”: Telling lives in the classroom</em> [Paper presentation]. ALANZ–ALAA Conference, Victoria University of Wellington, Wellington, New Zealand.</li>
+          <li>Soltani, B. (2013, November 20). <em>L2 identity and space: The case of a Chinese international student at a NZ university</em> [Paper presentation]. Linguistic Society of New Zealand Conference, Christchurch, New Zealand.</li>
+          <li>Soltani, B. (2013, September 7). <em>L2 identity and socio-academic space</em> [Paper presentation]. 8th University of Sydney TESOL Colloquium, Sydney, Australia.</li>
+          <li>Soltani, B. (2012, November). <em>“If you are older than the others, you must speak for them”: A case study of a Pacific Islander student’s interaction at a New Zealand university</em> [Paper presentation]. 13th Language and Society Conference, University of Auckland, Auckland, New Zealand.</li>
+          <li>Soltani, B. (2012, October 7). <em>Language, culture, power, and imagined community: A case study of an international student’s participation at university</em> [Paper presentation]. CLESOL Conference, Massey University, Palmerston North, New Zealand.</li>
+          <li>Soltani, B. (2011, November 17–18). <em>Participation, imagined communities, and language learning</em> [Paper presentation]. 19th Biennial Conference of the Linguistic Society of New Zealand, Victoria University of Wellington, Wellington, New Zealand.</li>
+        </ul>
+      </div>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Poster Presentations</h3>
+        <ul class="pub-list">
+          <li>Soltani, B. (2013, April 20). <em>Voices behind silence</em> [Poster presentation]. iMean Conference, Bristol, United Kingdom.</li>
+          <li>Soltani, B. (2013, April 20). <em>“I am a fool in the classroom!”</em> [Poster presentation]. iMean Conference, Bristol, United Kingdom.</li>
+          <li>Soltani, B. (2013, March 17). <em>Socialization of international students at a NZ university</em> [Poster presentation]. AAAL Conference, Dallas, TX, United States.</li>
+        </ul>
+      </div>
+
+      <p class="pub-group">Professional Service</p>
+
+      <div class="pub-block" style="flex-basis:100%;">
+        <h3>Colloquia Organized</h3>
+        <ul class="pub-list">
+          <li>Soltani, B. (Organizer and Chair). (2013, November). <em>Identity and language learning</em> [Colloquium]. ALANZ–ALAA Conference, Victoria University of Wellington, Wellington, New Zealand. <a href="http://www.alanz2013.org.nz/uploads/99618/files/ALANZ___ALAA_2013_List_of_confirmed_presenters_COLLOQUIUM_WORKSHOP.pdf" target="_blank" rel="noopener">http://www.alanz2013.org.nz/uploads/99618/files/ALANZ___ALAA_2013_List_of_confirmed_presenters_COLLOQUIUM_WORKSHOP.pdf</a></li>
+        </ul>
+      </div>
+
     </div>
 
     <div class="hero-actions" style="margin-top:8px;">
-      <a href="https://scholar.google.com/citations?user=PYyfjaMAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-ghost">Dr Behnam Soltani on Google Scholar ↗</a>
+      <a href="https://scholar.google.co.nz/citations?user=PYyfjaMAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener" class="btn btn-ghost">Dr Behnam Soltani on Google Scholar ↗</a>
     </div>
   </div>
 </section>
